@@ -11,6 +11,8 @@ env/
 
 # rknn-toolkit
 rknn-toolkit2-2.3.0/
+*.tar.gz
+*.zip
 
 # Python cache
 __pycache__/

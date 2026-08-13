@@ -6,6 +6,8 @@
 # Fix: Resolved 'pkg_resources' missing and ONNX version conflicts
 # =================================================================
 
+cd ~/rk3588_ws || { echo "Error: Could not change directory to ~/rk3588_ws"; exit 1; }
+
 set -e # Exit immediately if a command exits with a non-zero status
 
 # Define relative paths based on your directory structure
@@ -35,7 +37,28 @@ source rknn_env/bin/activate
 echo "Virtual environment 'rknn_env' is now active."
 
 echo "----------------------------------------------------"
-echo "Step 3: Installing Python dependencies"
+echo "Step 3: Installing rknn-toolkit2-2.3.0"
+echo "----------------------------------------------------"
+
+RKNN_ARCHIVE="v2.3.0.tar.gz"
+PKG_ROOT="rknn-toolkit2-2.3.0"
+VENV_DIR="rknn_env"
+
+if [ ! -d "$PKG_ROOT" ]; then
+
+    if [ ! -f "$RKNN_ARCHIVE" ]; then
+        wget https://github.com/airockchip/rknn-toolkit2/archive/refs/tags/v2.3.0.tar.gz
+    fi
+
+    tar -xf "$RKNN_ARCHIVE"
+    rm -f "$RKNN_ARCHIVE"
+
+else
+    echo "RKNN Toolkit2 source already exists."
+fi
+
+echo "----------------------------------------------------"
+echo "Step 4: Installing Python dependencies"
 echo "----------------------------------------------------"
 # 1. Upgrade pip and install fundamental build tools
 # We install setuptools twice to ensure it exists after requirement resolution
