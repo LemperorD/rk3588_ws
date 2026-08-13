@@ -1,0 +1,61 @@
+# ROS / CMake
+build/
+install/
+log/
+
+# Python virtual environments
+rknn_env/
+venv/
+.venv/
+env/
+
+# rknn-toolkit
+rknn-toolkit2-2.3.0/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# C/C++ build artifacts
+*.o
+*.so
+*.so.*
+*.a
+*.obj
+*.lib
+
+# Python packages / distributions
+*.whl
+*.egg
+*.egg-info/
+
+# Large ML models
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.engine
+*.rknn
+*.tflite
+
+# Dataset / media
+*.bag
+*.db3
+*.mp4
+*.avi
+*.mkv
+*.jpg
+*.jpeg
+*.png
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
